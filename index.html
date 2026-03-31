@@ -109,7 +109,6 @@
       z-index: 0;
     }
 
-    /* floating yarn balls */
     .yarn-float {
       position: absolute;
       border-radius: 50%;
@@ -122,7 +121,6 @@
       100% { transform: translateY(0) rotate(360deg); }
     }
 
-    /* EMILUS LOGO */
     .hero-logo-wrap {
       position: relative; z-index: 1;
       margin-bottom: 8px;
@@ -131,7 +129,6 @@
       gap: 16px;
     }
 
-    /* Crochet hook SVG decoration */
     .hook-svg { width: 48px; opacity: 0.7; }
 
     .hero-logo {
@@ -144,7 +141,6 @@
       gap: 0;
     }
 
-    /* Each letter gets yarn-stripe texture + a unique pink shade */
     .hero-logo span {
       display: inline-block;
       -webkit-background-clip: text;
@@ -196,7 +192,6 @@
       75%       { transform: translateY(4px) rotate(1.5deg); }
     }
 
-    /* yarn underline squiggle */
     .hero-logo-under {
       display: block;
       width: 100%;
@@ -257,7 +252,6 @@
     }
     .btn-outline:hover { background: var(--petal); border-color: var(--flamingo); }
 
-    /* little yarn ball animation in hero bottom */
     .hero-scroll-hint {
       position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
       z-index: 1;
@@ -349,10 +343,9 @@
       width: 100%; aspect-ratio: 1;
       object-fit: cover;
       display: block;
-      background: var(--petal); /* fallback */
+      background: var(--petal);
     }
 
-    /* Yarn-colored fallback placeholders */
     .card-placeholder {
       width: 100%; aspect-ratio: 1;
       display: flex; align-items: center; justify-content: center;
@@ -565,6 +558,7 @@
       white-space: nowrap;
     }
     .newsletter-form button:hover { transform: scale(1.04); background: var(--petal); }
+    .newsletter-form button:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
 
     /* ──────────────── FOOTER ──────────────── */
     footer {
@@ -622,7 +616,6 @@
       transform: translateY(0);
     }
 
-    /* stagger */
     .fade-up:nth-child(2) { transition-delay: .1s; }
     .fade-up:nth-child(3) { transition-delay: .2s; }
     .fade-up:nth-child(4) { transition-delay: .3s; }
@@ -634,13 +627,11 @@
       position: relative;
       overflow: hidden;
       background: var(--blush);
-      /* dense crochet-chain stitch pattern */
       background-image:
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cellipse cx='15' cy='15' rx='10' ry='6' fill='none' stroke='%23FFD6E0' stroke-width='1.5'/%3E%3Cellipse cx='45' cy='15' rx='10' ry='6' fill='none' stroke='%23FFD6E0' stroke-width='1.5'/%3E%3Cellipse cx='15' cy='45' rx='10' ry='6' fill='none' stroke='%23FFD6E0' stroke-width='1.5'/%3E%3Cellipse cx='45' cy='45' rx='10' ry='6' fill='none' stroke='%23FFD6E0' stroke-width='1.5'/%3E%3Ccircle cx='30' cy='30' r='4' fill='%23FFB3C6' opacity='0.5'/%3E%3C/svg%3E");
       padding: 90px 5vw 100px;
     }
 
-    /* big decorative yarn-ball bg circles */
     .contact-blob {
       position: absolute;
       border-radius: 50%;
@@ -659,9 +650,6 @@
       .contact-inner { grid-template-columns: 1fr; gap: 48px; }
     }
 
-    /* LEFT – info side */
-    .contact-info-col {}
-
     .contact-intro {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.1rem;
@@ -672,7 +660,6 @@
       max-width: 440px;
     }
 
-    /* Contact cards */
     .contact-cards { display: flex; flex-direction: column; gap: 20px; }
 
     .contact-card {
@@ -707,8 +694,8 @@
       font-size: 1.6rem;
       flex-shrink: 0;
     }
-    .icon-email  { background: linear-gradient(135deg, #FFD6E0, #FFB3C6); }
-    .icon-phone  { background: linear-gradient(135deg, #FFB3C6, #FF85A1); }
+    .icon-email    { background: linear-gradient(135deg, #FFD6E0, #FFB3C6); }
+    .icon-phone    { background: linear-gradient(135deg, #FFB3C6, #FF85A1); }
     .icon-whatsapp { background: linear-gradient(135deg, #FF85A1, #FF4D79); }
 
     .contact-card-body { position: relative; z-index: 1; }
@@ -740,7 +727,6 @@
     }
     .contact-card:hover .contact-card-arrow { transform: translateX(4px); color: var(--flamingo); }
 
-    /* hours blurb */
     .contact-hours {
       margin-top: 36px;
       background: linear-gradient(135deg, #fff5f8, #fff);
@@ -755,9 +741,6 @@
     .hours-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.7; }
     .hours-text strong { color: var(--mauve); display: block; margin-bottom: 4px; font-size: 0.92rem; }
 
-    /* RIGHT – inquiry form */
-    .contact-form-col {}
-
     .contact-form-card {
       background: #fff;
       border-radius: 28px;
@@ -767,7 +750,6 @@
       position: relative;
       overflow: hidden;
     }
-    /* Decorative top ribbon */
     .contact-form-card::before {
       content: '';
       position: absolute; top: 0; left: 0; right: 0; height: 6px;
@@ -860,6 +842,7 @@
       transition: transform .25s, box-shadow .25s;
     }
     .form-submit:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(255,77,121,0.4); }
+    .form-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
 
     .form-note {
       text-align: center;
@@ -870,7 +853,6 @@
     }
     .form-note a { color: var(--flamingo); text-decoration: none; }
 
-    /* Success state */
     .form-success {
       display: none;
       flex-direction: column;
@@ -910,25 +892,21 @@
 
 <!-- ═══════════════════════ HERO ═══════════════════════ -->
 <section class="hero stitch-bg">
-  <!-- Floating background circles (yarn balls) -->
   <div class="yarn-float" style="width:300px;height:300px;background:radial-gradient(circle,#FFB3C6,#FF85A1);top:-80px;right:-60px;animation-duration:9s;"></div>
   <div class="yarn-float" style="width:180px;height:180px;background:radial-gradient(circle,#FF85A1,#FF4D79);bottom:60px;left:-40px;animation-duration:12s;animation-delay:2s;"></div>
   <div class="yarn-float" style="width:120px;height:120px;background:radial-gradient(circle,#FFD6E0,#FFB3C6);top:30%;right:8%;animation-duration:8s;animation-delay:1s;"></div>
   <div class="yarn-float" style="width:80px;height:80px;background:radial-gradient(circle,#C2607A,#FF85A1);bottom:20%;left:12%;animation-duration:10s;animation-delay:3s;"></div>
 
   <div class="hero-logo-wrap">
-    <!-- tiny crochet hook left -->
     <svg class="hook-svg" viewBox="0 0 40 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="17" y="0" width="6" height="65" rx="3" fill="#C2607A"/>
       <path d="M23 65 Q38 75 32 90 Q26 105 14 92 Q6 82 18 78" stroke="#C2607A" stroke-width="5" stroke-linecap="round" fill="none"/>
     </svg>
 
-    <!-- THE BIG LOGO -->
     <div class="hero-logo" aria-label="Emilus">
       <span>E</span><span>m</span><span>i</span><span>l</span><span>u</span><span>s</span>
     </div>
 
-    <!-- Yarn ball right -->
     <svg class="hook-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:52px;">
       <circle cx="40" cy="40" r="36" fill="#FFB3C6"/>
       <ellipse cx="40" cy="40" rx="36" ry="12" stroke="#FF85A1" stroke-width="2.5" fill="none"/>
@@ -964,7 +942,6 @@
 <!-- ═══════════════════════ MARQUEE ═══════════════════════ -->
 <div class="marquee-wrap">
   <div class="marquee-inner">
-    <!-- duplicated for seamless loop -->
     <span class="marquee-item">Handmade with Love</span><span class="marquee-dot"> ✦ </span>
     <span class="marquee-item">Made to Order</span><span class="marquee-dot"> ✦ </span>
     <span class="marquee-item">One Stitch at a Time</span><span class="marquee-dot"> ✦ </span>
@@ -1142,7 +1119,6 @@
 <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
 <section id="contact">
 
-  <!-- Decorative background blobs -->
   <div class="contact-blob" style="width:420px;height:420px;background:radial-gradient(circle,#FFD6E0,transparent 70%);top:-100px;right:-80px;opacity:0.5;"></div>
   <div class="contact-blob" style="width:280px;height:280px;background:radial-gradient(circle,#FFB3C6,transparent 70%);bottom:-60px;left:-60px;opacity:0.4;"></div>
 
@@ -1160,7 +1136,6 @@
 
       <div class="contact-cards">
 
-        <!-- Email -->
         <a href="mailto:emiluanna9@gmail.com" class="contact-card">
           <div class="contact-card-icon icon-email">✉️</div>
           <div class="contact-card-body">
@@ -1171,7 +1146,6 @@
           <div class="contact-card-arrow">→</div>
         </a>
 
-        <!-- Phone -->
         <a href="tel:+256784020572" class="contact-card">
           <div class="contact-card-icon icon-phone">📞</div>
           <div class="contact-card-body">
@@ -1182,7 +1156,6 @@
           <div class="contact-card-arrow">→</div>
         </a>
 
-        <!-- WhatsApp -->
         <a href="https://wa.me/256784020572?text=Hi%20Anna!%20I%20saw%20Emilus%20and%20I%27d%20love%20to%20place%20an%20order%20🩷" target="_blank" class="contact-card">
           <div class="contact-card-icon icon-whatsapp">💬</div>
           <div class="contact-card-body">
@@ -1252,12 +1225,12 @@
             Send My Inquiry 🌸
           </button>
           <p class="form-note">
-            This opens your email app pre-filled — or reach her directly on
-            <a href="https://wa.me/256784020572" target="_blank">WhatsApp</a>. No spam, ever. 💕
+            Reach her directly on
+            <a href="https://wa.me/256784020572" target="_blank">WhatsApp</a> too. No spam, ever. 💕
           </p>
         </div>
 
-        <!-- Success message (shown after submit) -->
+        <!-- Success message -->
         <div class="form-success" id="form-success">
           <div class="success-icon">🎀</div>
           <h3>Message Sent!</h3>
@@ -1277,8 +1250,8 @@
   <p class="section-sub">New collections, behind-the-scenes peeks, and exclusive deals — straight to your inbox.</p>
 
   <div class="newsletter-form">
-    <input type="email" placeholder="your@email.com" />
-    <button>Subscribe 🌸</button>
+    <input type="email" id="newsletter-email" placeholder="your@email.com" />
+    <button id="newsletter-btn">Subscribe 🌸</button>
   </div>
 </section>
 
@@ -1324,21 +1297,28 @@
   </div>
 </footer>
 
+<!-- ═══════════════════════ SUPABASE SDK ═══════════════════════ -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
-  // Scroll-triggered fade-up
+  // ── Supabase client ──────────────────────────────────────────
+  const db = supabase.createClient(
+    'https://amssezrnrcrvobukcqmp.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFtc3NlenJucmNydm9idWtjcW1wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5NDU2NjcsImV4cCI6MjA5MDUyMTY2N30.W4423Nbey2oP6eIRsHTYGEeekNXNoDWFfzde-aLD-7U'
+  );
+
+  // ── Scroll-triggered fade-up ─────────────────────────────────
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-      }
+      if (e.isIntersecting) e.target.classList.add('visible');
     });
   }, { threshold: 0.12 });
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // Add-to-bag micro-interaction
+  // ── Add-to-bag micro-interaction ─────────────────────────────
   document.querySelectorAll('.add-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
       const original = this.textContent;
       this.textContent = '✓';
       this.style.background = '#FF4D79';
@@ -1351,48 +1331,91 @@
     });
   });
 
-  // Contact form → opens mailto pre-filled
+  // ── Inquiry form → saves to Supabase ────────────────────────
   const sendBtn = document.getElementById('form-send-btn');
   if (sendBtn) {
-    sendBtn.addEventListener('click', () => {
-      const name    = document.getElementById('f-name').value.trim();
-      const phone   = document.getElementById('f-phone').value.trim();
-      const email   = document.getElementById('f-email').value.trim();
-      const item    = document.getElementById('f-item').value;
-      const msg     = document.getElementById('f-msg').value.trim();
+    sendBtn.addEventListener('click', async () => {
+      const name  = document.getElementById('f-name').value.trim();
+      const phone = document.getElementById('f-phone').value.trim();
+      const email = document.getElementById('f-email').value.trim();
+      const item  = document.getElementById('f-item').value;
+      const msg   = document.getElementById('f-msg').value.trim();
 
+      // Highlight empty required fields
       if (!name || !phone || !item) {
-        // gentle shake on empty required fields
-        [document.getElementById('f-name'), document.getElementById('f-phone'), document.getElementById('f-item')]
-          .forEach(el => {
-            if (!el.value.trim()) {
-              el.style.borderColor = '#FF4D79';
-              el.style.background  = '#FFF0F5';
-              setTimeout(() => { el.style.borderColor = ''; el.style.background = ''; }, 1800);
-            }
-          });
+        ['f-name', 'f-phone', 'f-item'].forEach(id => {
+          const el = document.getElementById(id);
+          if (!el.value.trim()) {
+            el.style.borderColor = '#FF4D79';
+            el.style.background  = '#FFF0F5';
+            setTimeout(() => {
+              el.style.borderColor = '';
+              el.style.background  = '';
+            }, 1800);
+          }
+        });
         return;
       }
 
-      const subject  = encodeURIComponent(`Emilus Order Inquiry from ${name}`);
-      const body     = encodeURIComponent(
-        `Hi Anna! 🩷\n\nMy name is ${name}.\nPhone / WhatsApp: ${phone}${email ? '\nEmail: ' + email : ''}\n\nI'd like to order: ${item}\n\n${msg ? 'Details:\n' + msg : ''}\n\nLooking forward to hearing from you!`
-      );
-      window.location.href = `mailto:emiluanna9@gmail.com?subject=${subject}&body=${body}`;
+      sendBtn.textContent = 'Sending… 🌸';
+      sendBtn.disabled = true;
 
-      // show success card
+      const { error } = await db.from('inquiries').insert({
+        name,
+        phone,
+        email:         email || null,
+        item_category: item,
+        message:       msg   || null
+      });
+
+      if (error) {
+        sendBtn.textContent = 'Send My Inquiry 🌸';
+        sendBtn.disabled = false;
+        alert('Something went wrong — please WhatsApp Anna directly! 💕');
+        return;
+      }
+
+      // Show success card
       document.getElementById('form-content').style.display = 'none';
-      const success = document.getElementById('form-success');
-      success.style.display = 'flex';
+      document.getElementById('form-success').style.display = 'flex';
     });
   }
-  const form = document.querySelector('.newsletter-form');
-  form.querySelector('button').addEventListener('click', () => {
-    const input = form.querySelector('input');
-    if (input.value && input.value.includes('@')) {
-      form.innerHTML = '<p style="color:#fff;font-family:Nunito,sans-serif;font-weight:700;font-size:1rem;padding:16px;">🌸 You\'re in! Welcome to the Emilus family.</p>';
-    }
-  });
+
+  // ── Newsletter → saves to Supabase ──────────────────────────
+  const newsletterBtn = document.getElementById('newsletter-btn');
+  if (newsletterBtn) {
+    newsletterBtn.addEventListener('click', async () => {
+      const emailInput = document.getElementById('newsletter-email');
+      const email = emailInput.value.trim();
+
+      if (!email || !email.includes('@')) {
+        emailInput.style.outline = '2px solid rgba(255,255,255,0.9)';
+        setTimeout(() => { emailInput.style.outline = ''; }, 1500);
+        return;
+      }
+
+      newsletterBtn.textContent = 'Joining… 🌸';
+      newsletterBtn.disabled = true;
+
+      const { error } = await db.from('newsletter_subscribers').insert({ email });
+
+      const formEl = document.querySelector('.newsletter-form');
+
+      if (error && error.code === '23505') {
+        formEl.innerHTML = '<p style="color:#fff;font-family:Nunito,sans-serif;font-weight:700;font-size:1rem;padding:16px;">💕 You\'re already subscribed!</p>';
+        return;
+      }
+
+      if (error) {
+        newsletterBtn.textContent = 'Subscribe 🌸';
+        newsletterBtn.disabled = false;
+        alert('Something went wrong. Please try again! 🌸');
+        return;
+      }
+
+      formEl.innerHTML = '<p style="color:#fff;font-family:Nunito,sans-serif;font-weight:700;font-size:1rem;padding:16px;">🌸 You\'re in! Welcome to the Emilus family.</p>';
+    });
+  }
 </script>
 
 </body>
