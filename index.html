@@ -238,7 +238,6 @@
     .product-img {
       width: 100%; aspect-ratio: 1; object-fit: cover; display: block; background: var(--petal);
     }
-    /* Image fallback placeholder shown via onerror */
     .card-placeholder {
       width: 100%; aspect-ratio: 1; display: flex;
       align-items: center; justify-content: center; font-size: 4rem;
@@ -316,7 +315,6 @@
       background: linear-gradient(145deg,#fff,var(--blush));
       border: 1px solid var(--petal); border-radius: 24px;
       padding: 36px 28px; text-align: left; position: relative;
-      /* Removed fade-up from here — always visible */
       opacity: 1; transform: none;
     }
     .quote-mark {
@@ -609,20 +607,98 @@
 
   <div class="product-grid">
 
+    <!-- ══ BEACH & SWIM ══ -->
+
     <div class="product-card fade-up">
-      <div class="product-badge">✨ Bestseller</div>
-      <img class="product-img" src="img-bunny-heart.jpeg" alt="Sweet Heart Bunny – handmade crochet plushie holding a pink heart" loading="lazy"
+      <div class="product-badge">🌊 Beach</div>
+      <img class="product-img" src="img-beach-blue.jpeg" alt="Royal blue crochet halter top and striped shorts beach set" loading="lazy"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-      <div class="card-placeholder placeholder-1" style="display:none;">🐰</div>
+      <div class="card-placeholder placeholder-3" style="display:none;">🌊</div>
       <div class="product-info">
-        <div class="product-type">Amigurumi Plushie</div>
-        <div class="product-name">Sweet Heart Bunny</div>
+        <div class="product-type">Beach &amp; Swim</div>
+        <div class="product-name">Ocean Blue Beach Set</div>
         <div class="product-footer">
-          <div class="product-price">UGX 65,000</div>
+          <div class="product-price">UGX 90,000</div>
           <button class="add-btn" title="Order this">+</button>
         </div>
       </div>
     </div>
+
+    <div class="product-card fade-up">
+      <div class="product-badge">🌈 Limited</div>
+      <img class="product-img" src="img-dress-rainbow.jpeg" alt="Multicolour rainbow stripe open crochet maxi dress" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-1" style="display:none;">🌈</div>
+      <div class="product-info">
+        <div class="product-type">Crochet Dress</div>
+        <div class="product-name">Rainbow Maxi Dress</div>
+        <div class="product-footer">
+          <div class="product-price">UGX 120,000</div>
+          <button class="add-btn" title="Order this">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up">
+      <img class="product-img" src="img-dress-yellow.jpeg" alt="Mustard yellow open-weave crochet maxi dress with bell sleeves" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-2" style="display:none;">☀️</div>
+      <div class="product-info">
+        <div class="product-type">Crochet Dress</div>
+        <div class="product-name">Golden Hour Maxi</div>
+        <div class="product-footer">
+          <div class="product-price">UGX 120,000</div>
+          <button class="add-btn" title="Order this">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up">
+      <div class="product-badge">🏖️ Beach</div>
+      <img class="product-img" src="img-coord-granny.jpeg" alt="Colourful granny square crochet co-ord set with long cardigan and skirt" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-4" style="display:none;">🌺</div>
+      <div class="product-info">
+        <div class="product-type">Crochet Co-ord</div>
+        <div class="product-name">Fiesta Granny Co-ord</div>
+        <div class="product-footer">
+          <div class="product-price">UGX 120,000</div>
+          <button class="add-btn" title="Order this">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up">
+      <div class="product-badge">☀️ Beach</div>
+      <img class="product-img" src="img-bikini-gold.jpeg" alt="Honey gold and cream crochet bikini top and ruffled shorts set" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-5" style="display:none;">🍯</div>
+      <div class="product-info">
+        <div class="product-type">Beach &amp; Swim</div>
+        <div class="product-name">Honey Bikini Set</div>
+        <div class="product-footer">
+          <div class="product-price">UGX 60,000</div>
+          <button class="add-btn" title="Order this">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up">
+      <div class="product-badge">💎 Special</div>
+      <img class="product-img" src="img-dress-teal.jpeg" alt="Teal and seafoam ruffled crochet halter mini dress with sequins" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-6" style="display:none;">🩵</div>
+      <div class="product-info">
+        <div class="product-type">Crochet Dress</div>
+        <div class="product-name">Mermaid Ruffle Dress</div>
+        <div class="product-footer">
+          <div class="product-price">UGX 100,000</div>
+          <button class="add-btn" title="Order this">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ BAGS ══ -->
 
     <div class="product-card fade-up">
       <div class="product-badge">💕 New</div>
@@ -654,21 +730,6 @@
     </div>
 
     <div class="product-card fade-up">
-      <div class="product-badge">🌷 Limited</div>
-      <img class="product-img" src="img-bouquet-purple.jpeg" alt="Elegant purple crochet flower bouquet with lilies and roses" loading="lazy"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-      <div class="card-placeholder placeholder-4" style="display:none;">💐</div>
-      <div class="product-info">
-        <div class="product-type">Flower Bouquet</div>
-        <div class="product-name">Lavender Dreams</div>
-        <div class="product-footer">
-          <div class="product-price">UGX 95,000</div>
-          <button class="add-btn" title="Order this">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card fade-up">
       <img class="product-img" src="img-bag-heart-squares.jpeg" alt="Pink and white granny square tote bag with heart motifs" loading="lazy"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
       <div class="card-placeholder placeholder-5" style="display:none;">🎀</div>
@@ -677,20 +738,6 @@
         <div class="product-name">Heart Squares Tote</div>
         <div class="product-footer">
           <div class="product-price">UGX 130,000</div>
-          <button class="add-btn" title="Order this">+</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card fade-up">
-      <img class="product-img" src="img-bag-brown-tote.jpeg" alt="Chocolate brown crochet tote bag with front pocket" loading="lazy"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-      <div class="card-placeholder placeholder-6" style="display:none;">👜</div>
-      <div class="product-info">
-        <div class="product-type">Crochet Bag</div>
-        <div class="product-name">Everyday Tote</div>
-        <div class="product-footer">
-          <div class="product-price">UGX 110,000</div>
           <button class="add-btn" title="Order this">+</button>
         </div>
       </div>
@@ -726,6 +773,20 @@
     </div>
 
     <div class="product-card fade-up">
+      <img class="product-img" src="img-bag-brown-tote.jpeg" alt="Chocolate brown crochet tote bag with front pocket" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-6" style="display:none;">👜</div>
+      <div class="product-info">
+        <div class="product-type">Crochet Bag</div>
+        <div class="product-name">Everyday Tote</div>
+        <div class="product-footer">
+          <div class="product-price">UGX 110,000</div>
+          <button class="add-btn" title="Order this">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up">
       <div class="product-badge">💕 New</div>
       <img class="product-img" src="img-bag-butterfly.jpeg" alt="White crochet tote with pink tapestry butterfly design" loading="lazy"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
@@ -740,10 +801,118 @@
       </div>
     </div>
 
+    <!-- ══ WEARABLES ══ -->
+
+    <div class="product-card fade-up">
+      <div class="product-badge">🧶 New</div>
+      <img class="product-img" src="img-sweater-green.jpeg" alt="Green and white striped crochet sweater" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-1" style="display:none;">🧶</div>
+      <div class="product-info">
+        <div class="product-type">Crochet Wearable</div>
+        <div class="product-name">Sage Stripe Sweater</div>
+        <div class="product-footer">
+          <div class="product-price">UGX 150,000</div>
+          <button class="add-btn" title="Order this">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up">
+      <div class="product-badge">💕 New</div>
+      <img class="product-img" src="img-sweater-pink.jpeg" alt="Pink granny square crochet pullover sweater" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-2" style="display:none;">🌸</div>
+      <div class="product-info">
+        <div class="product-type">Crochet Wearable</div>
+        <div class="product-name">Rosy Granny Pullover</div>
+        <div class="product-footer">
+          <div class="product-price">UGX 150,000</div>
+          <button class="add-btn" title="Order this">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up">
+      <div class="product-badge">✨ Bestseller</div>
+      <img class="product-img" src="img-cardigan-purple.jpeg" alt="Purple ribbed crochet cardigan with buttons and tie hem" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-3" style="display:none;">💜</div>
+      <div class="product-info">
+        <div class="product-type">Crochet Wearable</div>
+        <div class="product-name">Violet Tie Cardigan</div>
+        <div class="product-footer">
+          <div class="product-price">UGX 150,000</div>
+          <button class="add-btn" title="Order this">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up">
+      <img class="product-img" src="img-cardigan-bw.jpeg" alt="Black and cream striped open front crochet cardigan" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-4" style="display:none;">🖤</div>
+      <div class="product-info">
+        <div class="product-type">Crochet Wearable</div>
+        <div class="product-name">Monochrome Cardigan</div>
+        <div class="product-footer">
+          <div class="product-price">UGX 150,000</div>
+          <button class="add-btn" title="Order this">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up">
+      <div class="product-badge">🌿 New</div>
+      <img class="product-img" src="img-vest-green.jpeg" alt="Green and white houndstooth crochet sweater vest" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-5" style="display:none;">🌿</div>
+      <div class="product-info">
+        <div class="product-type">Crochet Wearable</div>
+        <div class="product-name">Garden Check Vest</div>
+        <div class="product-footer">
+          <div class="product-price">UGX 120,000</div>
+          <button class="add-btn" title="Order this">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ PLUSHIES & BOUQUETS ══ -->
+
+    <div class="product-card fade-up">
+      <div class="product-badge">✨ Bestseller</div>
+      <img class="product-img" src="img-bunny-heart.jpeg" alt="Sweet Heart Bunny – handmade crochet plushie holding a pink heart" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-1" style="display:none;">🐰</div>
+      <div class="product-info">
+        <div class="product-type">Amigurumi Plushie</div>
+        <div class="product-name">Sweet Heart Bunny</div>
+        <div class="product-footer">
+          <div class="product-price">UGX 65,000</div>
+          <button class="add-btn" title="Order this">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-up">
+      <div class="product-badge">🌷 Limited</div>
+      <img class="product-img" src="img-bouquet-purple.jpeg" alt="Elegant purple crochet flower bouquet with lilies and roses" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-4" style="display:none;">💐</div>
+      <div class="product-info">
+        <div class="product-type">Flower Bouquet</div>
+        <div class="product-name">Lavender Dreams</div>
+        <div class="product-footer">
+          <div class="product-price">UGX 95,000</div>
+          <button class="add-btn" title="Order this">+</button>
+        </div>
+      </div>
+    </div>
+
     <div class="product-card fade-up">
       <img class="product-img" src="img-bouquet-mini.jpeg" alt="Cute mini crochet bouquet with sunflower, tulip, rose and lavender" loading="lazy"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-      <div class="card-placeholder placeholder-4" style="display:none;">🌷</div>
+      <div class="card-placeholder placeholder-6" style="display:none;">🌷</div>
       <div class="product-info">
         <div class="product-type">Flower Bouquet</div>
         <div class="product-name">Mini Garden Bouquet</div>
@@ -842,7 +1011,7 @@
 
       <div class="contact-cards">
 
-        <!-- EMAIL — plain text, no obfuscation -->
+        <!-- EMAIL -->
         <a href="mailto:emiluanna9@gmail.com" class="contact-card">
           <div class="contact-card-icon icon-email">✉️</div>
           <div class="contact-card-body">
@@ -999,7 +1168,7 @@
   </div>
 </footer>
 
-<!-- ═══════════════════ SUPABASE ═══════════════════ -->
+<!-- ═══════════════════ SCRIPTS ═══════════════════ -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
   // ── Supabase client
@@ -1008,7 +1177,7 @@
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFtc3NlenJucmNydm9idWtjcW1wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5NDU2NjcsImV4cCI6MjA5MDUyMTY2N30.W4423Nbey2oP6eIRsHTYGEeekNXNoDWFfzde-aLD-7U'
   );
 
-  // ── Scroll fade-up (product cards, contact columns)
+  // ── Scroll fade-up
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) e.target.classList.add('visible');
@@ -1099,6 +1268,7 @@
         formEl.innerHTML = '<p style="color:#fff;font-family:Nunito,sans-serif;font-weight:700;font-size:1rem;padding:16px;">💕 You\'re already subscribed!</p>';
         return;
       }
+
       if (error) {
         newsletterBtn.textContent = 'Subscribe 🌸';
         newsletterBtn.disabled = false;
@@ -1106,10 +1276,9 @@
         return;
       }
 
-      formEl.innerHTML = '<p style="color:#fff;font-family:Nunito,sans-serif;font-weight:700;font-size:1rem;padding:16px;">🌸 You\'re in! Welcome to the Emilus fam 🩷</p>';
+      formEl.innerHTML = '<p style="color:#fff;font-family:Nunito,sans-serif;font-weight:700;font-size:1rem;padding:16px;">🌸 You\'re in! Welcome to the Emilus family.</p>';
     });
   }
 </script>
-
 </body>
 </html>
