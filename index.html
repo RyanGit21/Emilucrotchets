@@ -21,9 +21,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Nunito', sans-serif;
       background: var(--cream);
@@ -31,13 +29,13 @@
       overflow-x: hidden;
     }
 
-    /* ──────────────── CROCHET STITCH PATTERN SVG BG ──────────────── */
+    /* ── STITCH BG ── */
     .stitch-bg {
       background-color: var(--blush);
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cellipse cx='10' cy='10' rx='6' ry='4' fill='none' stroke='%23FFB3C6' stroke-width='1.2'/%3E%3Cellipse cx='30' cy='10' rx='6' ry='4' fill='none' stroke='%23FFB3C6' stroke-width='1.2'/%3E%3Cellipse cx='10' cy='30' rx='6' ry='4' fill='none' stroke='%23FFB3C6' stroke-width='1.2'/%3E%3Cellipse cx='30' cy='30' rx='6' ry='4' fill='none' stroke='%23FFB3C6' stroke-width='1.2'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%23FFD6E0'/%3E%3C/svg%3E");
     }
 
-    /* ──────────────── NAVBAR ──────────────── */
+    /* ── NAVBAR ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -46,7 +44,6 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--petal);
     }
-
     .nav-logo {
       font-family: 'Abril Fatface', cursive;
       font-size: 1.6rem;
@@ -61,58 +58,37 @@
       filter: drop-shadow(1px 1px 0 var(--mauve));
       letter-spacing: 2px;
     }
-
     .nav-links { display: flex; gap: 36px; list-style: none; }
     .nav-links a {
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.85rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      transition: color .25s;
+      text-decoration: none; font-weight: 600; font-size: 0.85rem;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--text-mid); transition: color .25s;
     }
     .nav-links a:hover { color: var(--flamingo); }
-
     .nav-cta {
-      background: var(--flamingo);
-      color: #fff;
-      border: none;
-      padding: 10px 24px;
-      border-radius: 50px;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 1px;
-      cursor: pointer;
+      background: var(--flamingo); color: #fff; border: none;
+      padding: 10px 24px; border-radius: 50px;
+      font-family: 'Nunito', sans-serif; font-weight: 700;
+      font-size: 0.85rem; letter-spacing: 1px; cursor: pointer;
       transition: background .25s, transform .2s;
     }
     .nav-cta:hover { background: var(--mauve); transform: translateY(-2px); }
 
-    /* ──────────────── HERO ──────────────── */
+    /* ── HERO ── */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 120px 24px 80px;
-      position: relative;
-      overflow: hidden;
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 120px 24px 80px;
+      position: relative; overflow: hidden;
     }
     .hero::before {
-      content: '';
-      position: absolute; inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: radial-gradient(ellipse 80% 60% at 50% 40%,
         var(--petal) 0%, var(--blush) 60%, var(--cream) 100%);
       z-index: 0;
     }
-
     .yarn-float {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.18;
+      position: absolute; border-radius: 50%; opacity: 0.18;
       animation: drift linear infinite;
     }
     @keyframes drift {
@@ -120,142 +96,88 @@
       50%  { transform: translateY(-40px) rotate(180deg); }
       100% { transform: translateY(0) rotate(360deg); }
     }
-
     .hero-logo-wrap {
-      position: relative; z-index: 1;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
+      position: relative; z-index: 1; margin-bottom: 8px;
+      display: flex; align-items: center; gap: 16px;
     }
-
     .hook-svg { width: 48px; opacity: 0.7; }
-
     .hero-logo {
       font-family: 'Abril Fatface', cursive;
       font-size: clamp(5rem, 14vw, 11rem);
-      line-height: 1;
-      letter-spacing: 6px;
-      position: relative;
-      display: flex;
-      gap: 0;
+      line-height: 1; letter-spacing: 6px;
+      position: relative; display: flex; gap: 0;
     }
-
     .hero-logo span {
       display: inline-block;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      position: relative;
+      -webkit-background-clip: text; background-clip: text;
+      color: transparent; position: relative;
       animation: letterWobble 4s ease-in-out infinite;
     }
     .hero-logo span:nth-child(1) {
-      background-image: repeating-linear-gradient(50deg,
-        #FF4D79 0px, #FF4D79 3px, #FF85A1 3px, #FF85A1 6px, #FFB3C6 6px, #FFB3C6 9px);
-      filter: drop-shadow(2px 2px 0 #8B3A52);
-      animation-delay: 0s;
+      background-image: repeating-linear-gradient(50deg,#FF4D79 0px,#FF4D79 3px,#FF85A1 3px,#FF85A1 6px,#FFB3C6 6px,#FFB3C6 9px);
+      filter: drop-shadow(2px 2px 0 #8B3A52); animation-delay: 0s;
     }
     .hero-logo span:nth-child(2) {
-      background-image: repeating-linear-gradient(50deg,
-        #FF85A1 0px, #FF85A1 3px, #FFB3C6 3px, #FFB3C6 6px, #FFD6E0 6px, #FFD6E0 9px);
-      filter: drop-shadow(2px 2px 0 #C2607A);
-      animation-delay: .3s;
+      background-image: repeating-linear-gradient(50deg,#FF85A1 0px,#FF85A1 3px,#FFB3C6 3px,#FFB3C6 6px,#FFD6E0 6px,#FFD6E0 9px);
+      filter: drop-shadow(2px 2px 0 #C2607A); animation-delay: .3s;
     }
     .hero-logo span:nth-child(3) {
-      background-image: repeating-linear-gradient(50deg,
-        #C2607A 0px, #C2607A 3px, #FF4D79 3px, #FF4D79 6px, #FF85A1 6px, #FF85A1 9px);
-      filter: drop-shadow(2px 2px 0 #8B3A52);
-      animation-delay: .6s;
+      background-image: repeating-linear-gradient(50deg,#C2607A 0px,#C2607A 3px,#FF4D79 3px,#FF4D79 6px,#FF85A1 6px,#FF85A1 9px);
+      filter: drop-shadow(2px 2px 0 #8B3A52); animation-delay: .6s;
     }
     .hero-logo span:nth-child(4) {
-      background-image: repeating-linear-gradient(50deg,
-        #FFD6E0 0px, #FFD6E0 3px, #FF85A1 3px, #FF85A1 6px, #FF4D79 6px, #FF4D79 9px);
-      filter: drop-shadow(2px 2px 0 #C2607A);
-      animation-delay: .9s;
+      background-image: repeating-linear-gradient(50deg,#FFD6E0 0px,#FFD6E0 3px,#FF85A1 3px,#FF85A1 6px,#FF4D79 6px,#FF4D79 9px);
+      filter: drop-shadow(2px 2px 0 #C2607A); animation-delay: .9s;
     }
     .hero-logo span:nth-child(5) {
-      background-image: repeating-linear-gradient(50deg,
-        #FF4D79 0px, #FF4D79 3px, #C2607A 3px, #C2607A 6px, #8B3A52 6px, #8B3A52 9px);
-      filter: drop-shadow(2px 2px 0 #3D1A24);
-      animation-delay: 1.2s;
+      background-image: repeating-linear-gradient(50deg,#FF4D79 0px,#FF4D79 3px,#C2607A 3px,#C2607A 6px,#8B3A52 6px,#8B3A52 9px);
+      filter: drop-shadow(2px 2px 0 #3D1A24); animation-delay: 1.2s;
     }
     .hero-logo span:nth-child(6) {
-      background-image: repeating-linear-gradient(50deg,
-        #FFB3C6 0px, #FFB3C6 3px, #FF85A1 3px, #FF85A1 6px, #FF4D79 6px, #FF4D79 9px);
-      filter: drop-shadow(2px 2px 0 #C2607A);
-      animation-delay: 1.5s;
+      background-image: repeating-linear-gradient(50deg,#FFB3C6 0px,#FFB3C6 3px,#FF85A1 3px,#FF85A1 6px,#FF4D79 6px,#FF4D79 9px);
+      filter: drop-shadow(2px 2px 0 #C2607A); animation-delay: 1.5s;
     }
-
     @keyframes letterWobble {
       0%, 100% { transform: translateY(0) rotate(0deg); }
       25%       { transform: translateY(-6px) rotate(-1.5deg); }
       75%       { transform: translateY(4px) rotate(1.5deg); }
     }
-
     .hero-logo-under {
-      display: block;
-      width: 100%;
-      text-align: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.1rem;
-      color: var(--mauve);
-      letter-spacing: 4px;
-      margin-top: -8px;
-      position: relative;
-      z-index: 1;
+      display: block; width: 100%; text-align: center;
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 1.1rem; color: var(--mauve); letter-spacing: 4px;
+      margin-top: -8px; position: relative; z-index: 1;
     }
-
     .hero-tagline {
       position: relative; z-index: 1;
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-      font-weight: 300;
-      color: var(--text-mid);
-      max-width: 520px;
-      line-height: 1.7;
-      margin: 20px auto 40px;
+      font-weight: 300; color: var(--text-mid);
+      max-width: 520px; line-height: 1.7; margin: 20px auto 40px;
     }
-
     .hero-buttons {
       position: relative; z-index: 1;
       display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
     }
     .btn-primary {
       background: linear-gradient(135deg, var(--flamingo), var(--mauve));
-      color: #fff;
-      padding: 15px 40px;
-      border-radius: 50px;
-      border: none;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 1px;
-      cursor: pointer;
+      color: #fff; padding: 15px 40px; border-radius: 50px; border: none;
+      font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.95rem;
+      letter-spacing: 1px; cursor: pointer;
       box-shadow: 0 8px 30px rgba(255,77,121,0.35);
       transition: transform .25s, box-shadow .25s;
     }
     .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(255,77,121,0.45); }
-
     .btn-outline {
-      background: transparent;
-      color: var(--flamingo);
-      padding: 14px 38px;
-      border-radius: 50px;
-      border: 2px solid var(--rose);
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: all .25s;
+      background: transparent; color: var(--flamingo); padding: 14px 38px;
+      border-radius: 50px; border: 2px solid var(--rose);
+      font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.95rem;
+      letter-spacing: 1px; cursor: pointer; transition: all .25s;
     }
     .btn-outline:hover { background: var(--petal); border-color: var(--flamingo); }
-
     .hero-scroll-hint {
       position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
-      z-index: 1;
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 8px;
       color: var(--mauve); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;
       animation: bounceDown 2s ease-in-out infinite;
     }
@@ -265,42 +187,29 @@
     }
     .hero-scroll-hint svg { width: 20px; }
 
-    /* ──────────────── SECTION SHARED ──────────────── */
+    /* ── SECTION SHARED ── */
     section { padding: 90px 5vw; }
     .section-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--rose);
-      margin-bottom: 12px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--rose); margin-bottom: 12px;
     }
     .section-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 600;
-      color: var(--text-dark);
-      line-height: 1.15;
-      margin-bottom: 16px;
+      font-weight: 600; color: var(--text-dark); line-height: 1.15; margin-bottom: 16px;
     }
     .section-sub {
-      font-size: 1rem;
-      color: var(--text-mid);
-      max-width: 500px;
-      line-height: 1.7;
-      margin-bottom: 56px;
+      font-size: 1rem; color: var(--text-mid);
+      max-width: 500px; line-height: 1.7; margin-bottom: 56px;
     }
 
-    /* ──────────────── MARQUEE BANNER ──────────────── */
+    /* ── MARQUEE ── */
     .marquee-wrap {
       background: linear-gradient(135deg, var(--flamingo), var(--mauve));
-      padding: 16px 0;
-      overflow: hidden;
-      white-space: nowrap;
+      padding: 16px 0; overflow: hidden; white-space: nowrap;
     }
     .marquee-inner {
-      display: inline-flex;
-      gap: 0;
+      display: inline-flex; gap: 0;
       animation: marquee 22s linear infinite;
     }
     @keyframes marquee {
@@ -308,577 +217,321 @@
       to   { transform: translateX(-50%); }
     }
     .marquee-item {
-      font-family: 'Abril Fatface', cursive;
-      font-size: 1rem;
-      letter-spacing: 3px;
-      color: rgba(255,255,255,0.85);
-      padding: 0 32px;
+      font-family: 'Abril Fatface', cursive; font-size: 1rem;
+      letter-spacing: 3px; color: rgba(255,255,255,0.85); padding: 0 32px;
     }
     .marquee-dot { color: #FFD6E0; font-size: 1.4rem; vertical-align: middle; }
 
-    /* ──────────────── COLLECTION GRID ──────────────── */
+    /* ── COLLECTION ── */
     #collection { background: var(--cream); }
-
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 32px;
     }
-
     .product-card {
-      background: #fff;
-      border-radius: 24px;
-      overflow: hidden;
+      background: #fff; border-radius: 24px; overflow: hidden;
       box-shadow: 0 4px 20px rgba(194,96,122,0.1);
-      transition: transform .3s, box-shadow .3s;
-      cursor: pointer;
-      position: relative;
+      transition: transform .3s, box-shadow .3s; cursor: pointer; position: relative;
     }
-    .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 48px rgba(194,96,122,0.22);
-    }
-
+    .product-card:hover { transform: translateY(-8px); box-shadow: 0 16px 48px rgba(194,96,122,0.22); }
     .product-img {
-      width: 100%; aspect-ratio: 1;
-      object-fit: cover;
-      display: block;
-      background: var(--petal);
+      width: 100%; aspect-ratio: 1; object-fit: cover; display: block; background: var(--petal);
     }
-
+    /* Image fallback placeholder shown via onerror */
     .card-placeholder {
-      width: 100%; aspect-ratio: 1;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 4rem;
+      width: 100%; aspect-ratio: 1; display: flex;
+      align-items: center; justify-content: center; font-size: 4rem;
     }
-    .placeholder-1 { background: linear-gradient(135deg, #FFD6E0, #FFB3C6); }
-    .placeholder-2 { background: linear-gradient(135deg, #FFB3C6, #FF85A1); }
-    .placeholder-3 { background: linear-gradient(135deg, #FF85A1, #FF4D79); }
-    .placeholder-4 { background: linear-gradient(135deg, #FFDDE6, #FFB3C6); }
-    .placeholder-5 { background: linear-gradient(135deg, #C2607A, #FF85A1); }
-    .placeholder-6 { background: linear-gradient(135deg, #FFD6E0, #C2607A); }
-
+    .placeholder-1 { background: linear-gradient(135deg,#FFD6E0,#FFB3C6); }
+    .placeholder-2 { background: linear-gradient(135deg,#FFB3C6,#FF85A1); }
+    .placeholder-3 { background: linear-gradient(135deg,#FF85A1,#FF4D79); }
+    .placeholder-4 { background: linear-gradient(135deg,#FFDDE6,#FFB3C6); }
+    .placeholder-5 { background: linear-gradient(135deg,#C2607A,#FF85A1); }
+    .placeholder-6 { background: linear-gradient(135deg,#FFD6E0,#C2607A); }
     .product-badge {
       position: absolute; top: 16px; left: 16px;
-      background: var(--flamingo);
-      color: #fff;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 50px;
+      background: var(--flamingo); color: #fff; font-size: 0.7rem;
+      font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 50px;
     }
-
     .product-info { padding: 20px 22px 24px; }
     .product-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--text-dark);
-      margin-bottom: 4px;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+      font-weight: 600; color: var(--text-dark); margin-bottom: 4px;
     }
     .product-type {
-      font-size: 0.8rem;
-      color: var(--rose);
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+      font-size: 0.8rem; color: var(--rose); font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px;
     }
-    .product-footer {
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .product-price {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--mauve);
-    }
+    .product-footer { display: flex; align-items: center; justify-content: space-between; }
+    .product-price { font-size: 1.1rem; font-weight: 700; color: var(--mauve); }
     .add-btn {
-      background: var(--petal);
-      border: none;
-      border-radius: 50%;
-      width: 38px; height: 38px;
-      cursor: pointer;
-      font-size: 1.3rem;
+      background: var(--petal); border: none; border-radius: 50%;
+      width: 38px; height: 38px; cursor: pointer; font-size: 1.3rem;
       display: flex; align-items: center; justify-content: center;
-      transition: background .2s, transform .2s;
-      color: var(--flamingo);
+      transition: background .2s, transform .2s; color: var(--flamingo);
     }
     .add-btn:hover { background: var(--flamingo); color: #fff; transform: scale(1.1); }
 
-    /* ──────────────── ABOUT SECTION ──────────────── */
+    /* ── ABOUT ── */
     #about {
       background: var(--blush);
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M10 10 Q20 0 30 10 Q40 20 30 30 Q20 40 10 30 Q0 20 10 10Z' fill='none' stroke='%23FFB3C6' stroke-width='1'/%3E%3C/svg%3E");
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
     }
-
     @media (max-width: 768px) {
       #about { grid-template-columns: 1fr; gap: 40px; }
       nav { padding: 14px 20px; }
       .nav-links { display: none; }
     }
-
-    .about-img-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .about-img {
-      border-radius: 20px;
-      overflow: hidden;
-      aspect-ratio: 3/4;
-    }
+    .about-img-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .about-img { border-radius: 20px; overflow: hidden; aspect-ratio: 3/4; }
     .about-img:first-child { margin-top: 40px; }
-    .about-img img {
-      width: 100%; height: 100%; object-fit: cover;
-      display: block;
-    }
+    .about-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .about-img-placeholder {
-      width: 100%; height: 100%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 3.5rem;
+      width: 100%; height: 100%; display: flex;
+      align-items: center; justify-content: center; font-size: 3.5rem;
     }
-
     .about-text .section-sub { margin-bottom: 32px; }
-
-    .about-stats {
-      display: flex; gap: 40px; margin-top: 40px;
-    }
+    .about-stats { display: flex; gap: 40px; margin-top: 40px; }
     .stat-num {
-      font-family: 'Abril Fatface', cursive;
-      font-size: 2.2rem;
-      background: repeating-linear-gradient(45deg,
-        var(--flamingo), var(--flamingo) 3px, var(--rose) 3px, var(--rose) 6px);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      font-family: 'Abril Fatface', cursive; font-size: 2.2rem;
+      background: repeating-linear-gradient(45deg,var(--flamingo),var(--flamingo) 3px,var(--rose) 3px,var(--rose) 6px);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
     }
     .stat-label {
-      font-size: 0.8rem;
-      color: var(--text-mid);
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      font-size: 0.8rem; color: var(--text-mid); font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase;
     }
 
-    /* ──────────────── TESTIMONIALS ──────────────── */
+    /* ── TESTIMONIALS ── */
     #testimonials { background: var(--cream); text-align: center; }
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
-      margin-top: 0;
+      gap: 28px; margin-top: 0;
     }
     .testimonial-card {
-      background: linear-gradient(145deg, #fff, var(--blush));
-      border: 1px solid var(--petal);
-      border-radius: 24px;
-      padding: 36px 28px;
-      text-align: left;
-      position: relative;
+      background: linear-gradient(145deg,#fff,var(--blush));
+      border: 1px solid var(--petal); border-radius: 24px;
+      padding: 36px 28px; text-align: left; position: relative;
+      /* Removed fade-up from here — always visible */
+      opacity: 1; transform: none;
     }
     .quote-mark {
-      font-family: 'Abril Fatface', cursive;
-      font-size: 4rem;
-      color: var(--petal);
-      line-height: 0.5;
-      margin-bottom: 16px;
-      display: block;
+      font-family: 'Abril Fatface', cursive; font-size: 4rem;
+      color: var(--petal); line-height: 0.5; margin-bottom: 16px; display: block;
     }
     .testimonial-text {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      font-style: italic;
-      color: var(--text-mid);
-      line-height: 1.7;
-      margin-bottom: 24px;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.15rem;
+      font-style: italic; color: var(--text-mid); line-height: 1.7; margin-bottom: 24px;
     }
-    .testimonial-author {
-      font-weight: 700;
-      font-size: 0.85rem;
-      color: var(--flamingo);
-      letter-spacing: 1px;
-    }
+    .testimonial-author { font-weight: 700; font-size: 0.85rem; color: var(--flamingo); letter-spacing: 1px; }
     .stars { color: var(--flamingo); font-size: 0.9rem; margin-bottom: 8px; }
 
-    /* ──────────────── NEWSLETTER ──────────────── */
+    /* ── NEWSLETTER ── */
     #newsletter {
       background: linear-gradient(135deg, var(--flamingo) 0%, var(--mauve) 60%, var(--plum) 100%);
-      text-align: center;
-      padding: 90px 5vw;
-      position: relative;
-      overflow: hidden;
+      text-align: center; padding: 90px 5vw; position: relative; overflow: hidden;
     }
     #newsletter::before {
-      content: '';
-      position: absolute; inset: 0;
+      content: ''; position: absolute; inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cellipse cx='20' cy='20' rx='14' ry='9' fill='none' stroke='rgba(255,255,255,0.08)' stroke-width='1.5'/%3E%3C/svg%3E");
     }
     #newsletter .section-label { color: var(--petal); }
     #newsletter .section-title { color: #fff; max-width: 600px; margin: 0 auto 16px; }
     #newsletter .section-sub { color: rgba(255,255,255,0.75); margin: 0 auto 40px; }
-
     .newsletter-form {
-      display: flex; gap: 0; max-width: 440px;
-      margin: 0 auto;
+      display: flex; gap: 0; max-width: 440px; margin: 0 auto;
       position: relative; z-index: 1;
-      background: rgba(255,255,255,0.15);
-      border-radius: 50px;
-      padding: 6px;
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.15); border-radius: 50px; padding: 6px;
+      backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.25);
     }
     .newsletter-form input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      outline: none;
-      padding: 12px 20px;
-      color: #fff;
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.95rem;
+      flex: 1; background: transparent; border: none; outline: none;
+      padding: 12px 20px; color: #fff;
+      font-family: 'Nunito', sans-serif; font-size: 0.95rem;
     }
     .newsletter-form input::placeholder { color: rgba(255,255,255,0.6); }
     .newsletter-form button {
-      background: #fff;
-      color: var(--flamingo);
-      border: none;
-      padding: 12px 28px;
-      border-radius: 50px;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: transform .2s, background .2s;
-      white-space: nowrap;
+      background: #fff; color: var(--flamingo); border: none;
+      padding: 12px 28px; border-radius: 50px;
+      font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 0.9rem;
+      cursor: pointer; transition: transform .2s, background .2s; white-space: nowrap;
     }
     .newsletter-form button:hover { transform: scale(1.04); background: var(--petal); }
     .newsletter-form button:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
 
-    /* ──────────────── FOOTER ──────────────── */
+    /* ── FOOTER ── */
     footer {
-      background: var(--plum);
-      color: rgba(255,255,255,0.7);
+      background: var(--plum); color: rgba(255,255,255,0.7);
       padding: 60px 5vw 32px;
     }
     .footer-top {
       display: flex; justify-content: space-between; align-items: flex-start;
       gap: 40px; flex-wrap: wrap;
       border-bottom: 1px solid rgba(255,255,255,0.1);
-      padding-bottom: 48px;
-      margin-bottom: 32px;
+      padding-bottom: 48px; margin-bottom: 32px;
     }
     .footer-brand .nav-logo { font-size: 2rem; filter: drop-shadow(1px 1px 0 rgba(255,255,255,0.3)); }
-    .footer-brand p {
-      margin-top: 12px;
-      font-size: 0.9rem;
-      max-width: 240px;
-      line-height: 1.7;
-    }
-
+    .footer-brand p { margin-top: 12px; font-size: 0.9rem; max-width: 240px; line-height: 1.7; }
     .footer-col h4 {
-      color: var(--bubblegum);
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      font-weight: 700;
+      color: var(--bubblegum); font-size: 0.8rem; letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 20px; font-weight: 700;
     }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .footer-col ul li a {
-      color: rgba(255,255,255,0.6);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color .2s;
+      color: rgba(255,255,255,0.6); text-decoration: none;
+      font-size: 0.9rem; transition: color .2s;
     }
     .footer-col ul li a:hover { color: var(--bubblegum); }
-
     .footer-bottom {
       display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 12px;
-      font-size: 0.8rem;
+      flex-wrap: wrap; gap: 12px; font-size: 0.8rem;
     }
     .footer-bottom a { color: var(--bubblegum); text-decoration: none; }
 
-    /* ──────────────── SCROLL ANIMATIONS ──────────────── */
+    /* ── SCROLL ANIMATIONS ── */
     .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
+      opacity: 0; transform: translateY(30px);
       transition: opacity .7s ease, transform .7s ease;
     }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
     .fade-up:nth-child(2) { transition-delay: .1s; }
     .fade-up:nth-child(3) { transition-delay: .2s; }
     .fade-up:nth-child(4) { transition-delay: .3s; }
     .fade-up:nth-child(5) { transition-delay: .4s; }
     .fade-up:nth-child(6) { transition-delay: .5s; }
 
-    /* ──────────────── CONTACT SECTION ──────────────── */
+    /* ── CONTACT ── */
     #contact {
-      position: relative;
-      overflow: hidden;
-      background: var(--blush);
-      background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cellipse cx='15' cy='15' rx='10' ry='6' fill='none' stroke='%23FFD6E0' stroke-width='1.5'/%3E%3Cellipse cx='45' cy='15' rx='10' ry='6' fill='none' stroke='%23FFD6E0' stroke-width='1.5'/%3E%3Cellipse cx='15' cy='45' rx='10' ry='6' fill='none' stroke='%23FFD6E0' stroke-width='1.5'/%3E%3Cellipse cx='45' cy='45' rx='10' ry='6' fill='none' stroke='%23FFD6E0' stroke-width='1.5'/%3E%3Ccircle cx='30' cy='30' r='4' fill='%23FFB3C6' opacity='0.5'/%3E%3C/svg%3E");
+      position: relative; overflow: hidden; background: var(--blush);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cellipse cx='15' cy='15' rx='10' ry='6' fill='none' stroke='%23FFD6E0' stroke-width='1.5'/%3E%3Cellipse cx='45' cy='15' rx='10' ry='6' fill='none' stroke='%23FFD6E0' stroke-width='1.5'/%3E%3Cellipse cx='15' cy='45' rx='10' ry='6' fill='none' stroke='%23FFD6E0' stroke-width='1.5'/%3E%3Cellipse cx='45' cy='45' rx='10' ry='6' fill='none' stroke='%23FFD6E0' stroke-width='1.5'/%3E%3Ccircle cx='30' cy='30' r='4' fill='%23FFB3C6' opacity='0.5'/%3E%3C/svg%3E");
       padding: 90px 5vw 100px;
     }
-
-    .contact-blob {
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
+    .contact-blob { position: absolute; border-radius: 50%; pointer-events: none; }
     .contact-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: start;
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start;
     }
-    @media (max-width: 860px) {
-      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
-    }
-
+    @media (max-width: 860px) { .contact-inner { grid-template-columns: 1fr; gap: 48px; } }
     .contact-intro {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-style: italic;
-      color: var(--text-mid);
-      line-height: 1.8;
-      margin-bottom: 44px;
-      max-width: 440px;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic;
+      color: var(--text-mid); line-height: 1.8; margin-bottom: 44px; max-width: 440px;
     }
-
     .contact-cards { display: flex; flex-direction: column; gap: 20px; }
-
     .contact-card {
-      background: #fff;
-      border: 1.5px solid var(--petal);
-      border-radius: 22px;
-      padding: 26px 28px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      text-decoration: none;
-      color: inherit;
+      background: #fff; border: 1.5px solid var(--petal); border-radius: 22px;
+      padding: 26px 28px; display: flex; align-items: center; gap: 20px;
+      text-decoration: none; color: inherit;
       transition: transform .25s, box-shadow .25s, border-color .25s;
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
     .contact-card::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, var(--blush), #fff);
-      opacity: 0;
-      transition: opacity .25s;
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--blush), #fff); opacity: 0; transition: opacity .25s;
     }
     .contact-card:hover { transform: translateY(-5px); box-shadow: 0 14px 40px rgba(194,96,122,0.18); border-color: var(--rose); }
     .contact-card:hover::before { opacity: 1; }
-
     .contact-card-icon {
-      position: relative; z-index: 1;
-      width: 58px; height: 58px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem;
-      flex-shrink: 0;
+      position: relative; z-index: 1; width: 58px; height: 58px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; flex-shrink: 0;
     }
-    .icon-email    { background: linear-gradient(135deg, #FFD6E0, #FFB3C6); }
-    .icon-phone    { background: linear-gradient(135deg, #FFB3C6, #FF85A1); }
-    .icon-whatsapp { background: linear-gradient(135deg, #FF85A1, #FF4D79); }
-
+    .icon-email    { background: linear-gradient(135deg,#FFD6E0,#FFB3C6); }
+    .icon-phone    { background: linear-gradient(135deg,#FFB3C6,#FF85A1); }
+    .icon-whatsapp { background: linear-gradient(135deg,#FF85A1,#FF4D79); }
     .contact-card-body { position: relative; z-index: 1; }
     .contact-card-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--rose);
-      margin-bottom: 4px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--rose); margin-bottom: 4px;
     }
     .contact-card-value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--text-dark);
+      font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+      font-weight: 600; color: var(--text-dark);
     }
-    .contact-card-hint {
-      font-size: 0.8rem;
-      color: var(--text-mid);
-      margin-top: 2px;
-    }
+    .contact-card-hint { font-size: 0.8rem; color: var(--text-mid); margin-top: 2px; }
     .contact-card-arrow {
-      margin-left: auto;
-      position: relative; z-index: 1;
-      font-size: 1.2rem;
-      color: var(--bubblegum);
-      transition: transform .2s, color .2s;
+      margin-left: auto; position: relative; z-index: 1;
+      font-size: 1.2rem; color: var(--bubblegum); transition: transform .2s, color .2s;
     }
     .contact-card:hover .contact-card-arrow { transform: translateX(4px); color: var(--flamingo); }
-
     .contact-hours {
       margin-top: 36px;
-      background: linear-gradient(135deg, #fff5f8, #fff);
-      border: 1px dashed var(--bubblegum);
-      border-radius: 18px;
-      padding: 22px 26px;
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
+      background: linear-gradient(135deg,#fff5f8,#fff);
+      border: 1px dashed var(--bubblegum); border-radius: 18px; padding: 22px 26px;
+      display: flex; gap: 16px; align-items: flex-start;
     }
     .hours-icon { font-size: 1.8rem; flex-shrink: 0; }
     .hours-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.7; }
     .hours-text strong { color: var(--mauve); display: block; margin-bottom: 4px; font-size: 0.92rem; }
-
     .contact-form-card {
-      background: #fff;
-      border-radius: 28px;
-      padding: 44px 40px;
-      box-shadow: 0 8px 48px rgba(194,96,122,0.12);
-      border: 1px solid var(--petal);
-      position: relative;
-      overflow: hidden;
+      background: #fff; border-radius: 28px; padding: 44px 40px;
+      box-shadow: 0 8px 48px rgba(194,96,122,0.12); border: 1px solid var(--petal);
+      position: relative; overflow: hidden;
     }
     .contact-form-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 6px;
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
       background: repeating-linear-gradient(90deg,
-        var(--flamingo) 0px, var(--flamingo) 12px,
-        var(--rose) 12px, var(--rose) 24px,
-        var(--bubblegum) 24px, var(--bubblegum) 36px,
-        var(--petal) 36px, var(--petal) 48px
+        var(--flamingo) 0px,var(--flamingo) 12px,var(--rose) 12px,var(--rose) 24px,
+        var(--bubblegum) 24px,var(--bubblegum) 36px,var(--petal) 36px,var(--petal) 48px
       );
     }
-
     .form-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.7rem;
-      font-weight: 600;
-      color: var(--text-dark);
-      margin-bottom: 6px;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.7rem;
+      font-weight: 600; color: var(--text-dark); margin-bottom: 6px;
     }
-    .form-subtitle {
-      font-size: 0.88rem;
-      color: var(--text-mid);
-      margin-bottom: 32px;
-      line-height: 1.6;
-    }
-
+    .form-subtitle { font-size: 0.88rem; color: var(--text-mid); margin-bottom: 32px; line-height: 1.6; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 18px;
-    }
+    .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
     .form-group label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--mauve);
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--mauve);
     }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.95rem;
-      color: var(--text-dark);
-      background: var(--blush);
-      border: 1.5px solid var(--petal);
-      border-radius: 14px;
-      padding: 13px 18px;
-      outline: none;
-      transition: border-color .2s, background .2s;
-      resize: none;
+    .form-group input, .form-group select, .form-group textarea {
+      font-family: 'Nunito', sans-serif; font-size: 0.95rem; color: var(--text-dark);
+      background: var(--blush); border: 1.5px solid var(--petal); border-radius: 14px;
+      padding: 13px 18px; outline: none;
+      transition: border-color .2s, background .2s; resize: none;
     }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--rose);
-      background: #fff;
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--rose); background: #fff;
     }
     .form-group select { cursor: pointer; }
     .form-group textarea { min-height: 110px; }
-
     .yarn-divider {
-      width: 100%;
-      height: 10px;
-      background: repeating-linear-gradient(90deg,
-        var(--petal) 0px, var(--petal) 8px,
-        transparent 8px, transparent 14px
-      );
-      border-radius: 5px;
-      margin: 8px 0 24px;
-      opacity: 0.6;
+      width: 100%; height: 10px;
+      background: repeating-linear-gradient(90deg,var(--petal) 0px,var(--petal) 8px,transparent 8px,transparent 14px);
+      border-radius: 5px; margin: 8px 0 24px; opacity: 0.6;
     }
-
     .form-submit {
       width: 100%;
       background: linear-gradient(135deg, var(--flamingo), var(--mauve));
-      color: #fff;
-      border: none;
-      padding: 16px;
-      border-radius: 50px;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 1px;
-      cursor: pointer;
+      color: #fff; border: none; padding: 16px; border-radius: 50px;
+      font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 1rem;
+      letter-spacing: 1px; cursor: pointer;
       box-shadow: 0 8px 28px rgba(255,77,121,0.3);
       transition: transform .25s, box-shadow .25s;
     }
     .form-submit:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(255,77,121,0.4); }
     .form-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
-
-    .form-note {
-      text-align: center;
-      font-size: 0.78rem;
-      color: var(--text-mid);
-      margin-top: 14px;
-      line-height: 1.6;
-    }
+    .form-note { text-align: center; font-size: 0.78rem; color: var(--text-mid); margin-top: 14px; line-height: 1.6; }
     .form-note a { color: var(--flamingo); text-decoration: none; }
-
     .form-success {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-      gap: 16px;
+      display: none; flex-direction: column; align-items: center;
+      justify-content: center; text-align: center; padding: 40px 20px; gap: 16px;
     }
     .form-success .success-icon { font-size: 4rem; animation: popIn .5s ease; }
-    @keyframes popIn {
-      0%   { transform: scale(0); }
-      70%  { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
-    .form-success h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      color: var(--text-dark);
-    }
+    @keyframes popIn { 0% { transform: scale(0); } 70% { transform: scale(1.2); } 100% { transform: scale(1); } }
+    .form-success h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--text-dark); }
     .form-success p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
   </style>
 </head>
 <body>
 
-<!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+<!-- ═══════════════════ NAVBAR ═══════════════════ -->
 <nav>
   <div class="nav-logo">Emilus</div>
   <ul class="nav-links">
@@ -890,7 +543,7 @@
   <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">🛒 Order Now</button>
 </nav>
 
-<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<!-- ═══════════════════ HERO ═══════════════════ -->
 <section class="hero stitch-bg">
   <div class="yarn-float" style="width:300px;height:300px;background:radial-gradient(circle,#FFB3C6,#FF85A1);top:-80px;right:-60px;animation-duration:9s;"></div>
   <div class="yarn-float" style="width:180px;height:180px;background:radial-gradient(circle,#FF85A1,#FF4D79);bottom:60px;left:-40px;animation-duration:12s;animation-delay:2s;"></div>
@@ -902,11 +555,9 @@
       <rect x="17" y="0" width="6" height="65" rx="3" fill="#C2607A"/>
       <path d="M23 65 Q38 75 32 90 Q26 105 14 92 Q6 82 18 78" stroke="#C2607A" stroke-width="5" stroke-linecap="round" fill="none"/>
     </svg>
-
     <div class="hero-logo" aria-label="Emilus">
       <span>E</span><span>m</span><span>i</span><span>l</span><span>u</span><span>s</span>
     </div>
-
     <svg class="hook-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:52px;">
       <circle cx="40" cy="40" r="36" fill="#FFB3C6"/>
       <ellipse cx="40" cy="40" rx="36" ry="12" stroke="#FF85A1" stroke-width="2.5" fill="none"/>
@@ -917,20 +568,13 @@
   </div>
 
   <span class="hero-logo-under">✦ handmade with love ✦</span>
-
   <p class="hero-tagline">
     Lovingly handcrafted crochet pieces — from playful plushies to elegant accessories. Each stitch tells a story.
   </p>
-
   <div class="hero-buttons">
-    <button class="btn-primary" onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})">
-      🌸 Explore Collection
-    </button>
-    <button class="btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
-      Our Story
-    </button>
+    <button class="btn-primary" onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})">🌸 Explore Collection</button>
+    <button class="btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Our Story</button>
   </div>
-
   <div class="hero-scroll-hint">
     <span>Scroll</span>
     <svg viewBox="0 0 20 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -939,7 +583,7 @@
   </div>
 </section>
 
-<!-- ═══════════════════════ MARQUEE ═══════════════════════ -->
+<!-- ═══════════════════ MARQUEE ═══════════════════ -->
 <div class="marquee-wrap">
   <div class="marquee-inner">
     <span class="marquee-item">Handmade with Love</span><span class="marquee-dot"> ✦ </span>
@@ -947,17 +591,17 @@
     <span class="marquee-item">One Stitch at a Time</span><span class="marquee-dot"> ✦ </span>
     <span class="marquee-item">Crochet Gifting</span><span class="marquee-dot"> ✦ </span>
     <span class="marquee-item">Emilus Originals</span><span class="marquee-dot"> ✦ </span>
-    <span class="marquee-item">Soft & Charming</span><span class="marquee-dot"> ✦ </span>
+    <span class="marquee-item">Soft &amp; Charming</span><span class="marquee-dot"> ✦ </span>
     <span class="marquee-item">Handmade with Love</span><span class="marquee-dot"> ✦ </span>
     <span class="marquee-item">Made to Order</span><span class="marquee-dot"> ✦ </span>
     <span class="marquee-item">One Stitch at a Time</span><span class="marquee-dot"> ✦ </span>
     <span class="marquee-item">Crochet Gifting</span><span class="marquee-dot"> ✦ </span>
     <span class="marquee-item">Emilus Originals</span><span class="marquee-dot"> ✦ </span>
-    <span class="marquee-item">Soft & Charming</span><span class="marquee-dot"> ✦ </span>
+    <span class="marquee-item">Soft &amp; Charming</span><span class="marquee-dot"> ✦ </span>
   </div>
 </div>
 
-<!-- ═══════════════════════ COLLECTION ═══════════════════════ -->
+<!-- ═══════════════════ COLLECTION ═══════════════════ -->
 <section id="collection">
   <div class="section-label">✦ New Arrivals</div>
   <div class="section-title">Our Darling Collection</div>
@@ -965,10 +609,11 @@
 
   <div class="product-grid">
 
-    <!-- 1. Bunny with Heart -->
     <div class="product-card fade-up">
       <div class="product-badge">✨ Bestseller</div>
-      <img class="product-img" src="img-bunny-heart.jpeg" alt="Sweet Heart Bunny – handmade crochet plushie holding a pink heart" loading="lazy" />
+      <img class="product-img" src="img-bunny-heart.jpeg" alt="Sweet Heart Bunny – handmade crochet plushie holding a pink heart" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-1" style="display:none;">🐰</div>
       <div class="product-info">
         <div class="product-type">Amigurumi Plushie</div>
         <div class="product-name">Sweet Heart Bunny</div>
@@ -979,10 +624,11 @@
       </div>
     </div>
 
-    <!-- 2. Burgundy Chain Bag -->
     <div class="product-card fade-up">
       <div class="product-badge">💕 New</div>
-      <img class="product-img" src="img-bag-burgundy.jpeg" alt="Burgundy crochet shoulder bag with silver chain and heart charms" loading="lazy" />
+      <img class="product-img" src="img-bag-burgundy.jpeg" alt="Burgundy crochet shoulder bag with silver chain and heart charms" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-2" style="display:none;">👜</div>
       <div class="product-info">
         <div class="product-type">Crochet Bag</div>
         <div class="product-name">Luxe Chain Bag</div>
@@ -993,9 +639,10 @@
       </div>
     </div>
 
-    <!-- 3. Yellow Chunky Tote -->
     <div class="product-card fade-up">
-      <img class="product-img" src="img-bag-yellow.jpeg" alt="Sunny yellow chunky crochet tote bag" loading="lazy" />
+      <img class="product-img" src="img-bag-yellow.jpeg" alt="Sunny yellow chunky crochet tote bag" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-3" style="display:none;">🛍️</div>
       <div class="product-info">
         <div class="product-type">Crochet Bag</div>
         <div class="product-name">Sunshine Tote</div>
@@ -1006,10 +653,11 @@
       </div>
     </div>
 
-    <!-- 4. Purple Flower Bouquet -->
     <div class="product-card fade-up">
       <div class="product-badge">🌷 Limited</div>
-      <img class="product-img" src="img-bouquet-purple.jpeg" alt="Elegant purple crochet flower bouquet with lilies and roses" loading="lazy" />
+      <img class="product-img" src="img-bouquet-purple.jpeg" alt="Elegant purple crochet flower bouquet with lilies and roses" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-4" style="display:none;">💐</div>
       <div class="product-info">
         <div class="product-type">Flower Bouquet</div>
         <div class="product-name">Lavender Dreams</div>
@@ -1020,9 +668,10 @@
       </div>
     </div>
 
-    <!-- 5. Pink Heart Granny Square Tote -->
     <div class="product-card fade-up">
-      <img class="product-img" src="img-bag-heart-squares.jpeg" alt="Pink and white granny square tote bag with heart motifs" loading="lazy" />
+      <img class="product-img" src="img-bag-heart-squares.jpeg" alt="Pink and white granny square tote bag with heart motifs" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-5" style="display:none;">🎀</div>
       <div class="product-info">
         <div class="product-type">Crochet Bag</div>
         <div class="product-name">Heart Squares Tote</div>
@@ -1033,9 +682,10 @@
       </div>
     </div>
 
-    <!-- 6. Brown Everyday Tote -->
     <div class="product-card fade-up">
-      <img class="product-img" src="img-bag-brown-tote.jpeg" alt="Chocolate brown crochet tote bag with front pocket" loading="lazy" />
+      <img class="product-img" src="img-bag-brown-tote.jpeg" alt="Chocolate brown crochet tote bag with front pocket" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-6" style="display:none;">👜</div>
       <div class="product-info">
         <div class="product-type">Crochet Bag</div>
         <div class="product-name">Everyday Tote</div>
@@ -1046,10 +696,11 @@
       </div>
     </div>
 
-    <!-- 7. Pink Daisy Tote -->
     <div class="product-card fade-up">
       <div class="product-badge">✨ Bestseller</div>
-      <img class="product-img" src="img-bag-pink-daisy.jpeg" alt="Hot pink crochet tote bag with white daisy appliqués" loading="lazy" />
+      <img class="product-img" src="img-bag-pink-daisy.jpeg" alt="Hot pink crochet tote bag with white daisy appliqués" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-1" style="display:none;">🌸</div>
       <div class="product-info">
         <div class="product-type">Crochet Bag</div>
         <div class="product-name">Daisy Pop Tote</div>
@@ -1060,9 +711,10 @@
       </div>
     </div>
 
-    <!-- 8. Granny Flower Bag -->
     <div class="product-card fade-up">
-      <img class="product-img" src="img-bag-granny-flower.jpeg" alt="Cream granny square bag with pink and yellow flower motifs" loading="lazy" />
+      <img class="product-img" src="img-bag-granny-flower.jpeg" alt="Cream granny square bag with pink and yellow flower motifs" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-2" style="display:none;">🌼</div>
       <div class="product-info">
         <div class="product-type">Crochet Bag</div>
         <div class="product-name">Bloom Granny Bag</div>
@@ -1073,10 +725,11 @@
       </div>
     </div>
 
-    <!-- 9. Butterfly Tote -->
     <div class="product-card fade-up">
       <div class="product-badge">💕 New</div>
-      <img class="product-img" src="img-bag-butterfly.jpeg" alt="White crochet tote with pink tapestry butterfly design" loading="lazy" />
+      <img class="product-img" src="img-bag-butterfly.jpeg" alt="White crochet tote with pink tapestry butterfly design" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-3" style="display:none;">🦋</div>
       <div class="product-info">
         <div class="product-type">Crochet Bag</div>
         <div class="product-name">Butterfly Tote</div>
@@ -1087,9 +740,10 @@
       </div>
     </div>
 
-    <!-- 10. Mini Flower Bouquet -->
     <div class="product-card fade-up">
-      <img class="product-img" src="img-bouquet-mini.jpeg" alt="Cute mini crochet bouquet with sunflower, tulip, rose and lavender" loading="lazy" />
+      <img class="product-img" src="img-bouquet-mini.jpeg" alt="Cute mini crochet bouquet with sunflower, tulip, rose and lavender" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="card-placeholder placeholder-4" style="display:none;">🌷</div>
       <div class="product-info">
         <div class="product-type">Flower Bouquet</div>
         <div class="product-name">Mini Garden Bouquet</div>
@@ -1103,7 +757,7 @@
   </div>
 </section>
 
-<!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+<!-- ═══════════════════ ABOUT ═══════════════════ -->
 <section id="about">
   <div class="about-img-col">
     <div class="about-img">
@@ -1119,7 +773,6 @@
       <div class="about-img-placeholder" style="background:linear-gradient(160deg,#FFD6E0,#C2607A);height:100%;">🎀</div>
     </div>
   </div>
-
   <div class="about-text">
     <div class="section-label">✦ Our Story</div>
     <div class="section-title">Crafted with Patience, Given with Love</div>
@@ -1129,56 +782,49 @@
     <p class="section-sub" style="margin-top:-30px;">
       Whether you want a custom plushie for a loved one or a statement bag for yourself, we're here to bring your vision to life in yarn.
     </p>
-    <button class="btn-primary">Meet the Maker →</button>
-
+    <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Meet the Maker →</button>
     <div class="about-stats">
-      <div>
-        <div class="stat-num">500+</div>
-        <div class="stat-label">Happy Customers</div>
-      </div>
-      <div>
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Handmade</div>
-      </div>
-      <div>
-        <div class="stat-num">∞</div>
-        <div class="stat-label">Love Stitched In</div>
-      </div>
+      <div><div class="stat-num">500+</div><div class="stat-label">Happy Customers</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label">Handmade</div></div>
+      <div><div class="stat-num">∞</div><div class="stat-label">Love Stitched In</div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════ TESTIMONIALS ═══════════════════════ -->
+<!-- ═══════════════════ TESTIMONIALS ═══════════════════ -->
 <section id="testimonials">
   <div class="section-label" style="text-align:center;">✦ Customer Love</div>
   <div class="section-title" style="text-align:center;margin:0 auto 16px;">What Our Customers Say</div>
   <p class="section-sub" style="margin:0 auto 56px;text-align:center;">Real words from real people who've fallen for Emilus.</p>
 
   <div class="testimonials-grid">
-    <div class="testimonial-card fade-up">
+
+    <div class="testimonial-card">
       <div class="stars">★★★★★</div>
       <span class="quote-mark">"</span>
       <p class="testimonial-text">I ordered a custom bunny for my daughter's birthday and it made her cry happy tears. The quality is just incredible — so soft and beautifully made.</p>
       <div class="testimonial-author">— Aisha M., Kampala</div>
     </div>
-    <div class="testimonial-card fade-up">
+
+    <div class="testimonial-card">
       <div class="stars">★★★★★</div>
       <span class="quote-mark">"</span>
       <p class="testimonial-text">The Petal Tote is absolutely gorgeous. I get compliments every time I carry it. Worth every shilling and more. Will definitely order again!</p>
       <div class="testimonial-author">— Grace N., Entebbe</div>
     </div>
-    <div class="testimonial-card fade-up">
+
+    <div class="testimonial-card">
       <div class="stars">★★★★★</div>
       <span class="quote-mark">"</span>
       <p class="testimonial-text">Fast, careful packaging and the cutest little note inside. Emilus feels like receiving a gift from a friend. 10/10 experience, every time.</p>
       <div class="testimonial-author">— Priya K., Jinja</div>
     </div>
+
   </div>
 </section>
 
-<!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+<!-- ═══════════════════ CONTACT ═══════════════════ -->
 <section id="contact">
-
   <div class="contact-blob" style="width:420px;height:420px;background:radial-gradient(circle,#FFD6E0,transparent 70%);top:-100px;right:-80px;opacity:0.5;"></div>
   <div class="contact-blob" style="width:280px;height:280px;background:radial-gradient(circle,#FFB3C6,transparent 70%);bottom:-60px;left:-60px;opacity:0.4;"></div>
 
@@ -1196,16 +842,18 @@
 
       <div class="contact-cards">
 
-        <a href="/cdn-cgi/l/email-protection#a7c2cacecbd2c6c9c9c69ee7c0cac6cecb89c4c8ca" class="contact-card">
+        <!-- EMAIL — plain text, no obfuscation -->
+        <a href="mailto:emiluanna9@gmail.com" class="contact-card">
           <div class="contact-card-icon icon-email">✉️</div>
           <div class="contact-card-body">
             <div class="contact-card-label">Email Anna</div>
-            <div class="contact-card-value"><span class="__cf_email__" data-cfemail="e580888c8990848b8b84dca58288848c89cb868a88">[email&#160;protected]</span></div>
+            <div class="contact-card-value">emiluanna9@gmail.com</div>
             <div class="contact-card-hint">She replies within 24 hours 🌸</div>
           </div>
           <div class="contact-card-arrow">→</div>
         </a>
 
+        <!-- PHONE -->
         <a href="tel:+256784020572" class="contact-card">
           <div class="contact-card-icon icon-phone">📞</div>
           <div class="contact-card-body">
@@ -1216,7 +864,8 @@
           <div class="contact-card-arrow">→</div>
         </a>
 
-        <a href="https://wa.me/256784020572?text=Hi%20Anna!%20I%20saw%20Emilus%20and%20I%27d%20love%20to%20place%20an%20order%20🩷" target="_blank" class="contact-card">
+        <!-- WHATSAPP -->
+        <a href="https://wa.me/256784020572?text=Hi%20Anna!%20I%20saw%20Emilus%20and%20I%27d%20love%20to%20place%20an%20order%20%F0%9F%A9%B7" target="_blank" class="contact-card">
           <div class="contact-card-icon icon-whatsapp">💬</div>
           <div class="contact-card-body">
             <div class="contact-card-label">WhatsApp</div>
@@ -1232,7 +881,7 @@
         <div class="hours-icon">🧶</div>
         <div class="hours-text">
           <strong>Made to Order — Here's How It Works</strong>
-          Browse the collection, then contact Anna with what you'd like. She'll confirm availability, yarn colours, size & your custom details — then get hooking! Most orders are ready in 5–10 days.
+          Browse the collection, then contact Anna with what you'd like. She'll confirm availability, yarn colours, size &amp; your custom details — then get hooking! Most orders are ready in 5–10 days.
         </div>
       </div>
     </div>
@@ -1280,16 +929,13 @@
 
           <div class="yarn-divider"></div>
 
-          <button class="form-submit" id="form-send-btn">
-            Send My Inquiry 🌸
-          </button>
+          <button class="form-submit" id="form-send-btn">Send My Inquiry 🌸</button>
           <p class="form-note">
             Reach her directly on
             <a href="https://wa.me/256784020572" target="_blank">WhatsApp</a> too. No spam, ever. 💕
           </p>
         </div>
 
-        <!-- Success message -->
         <div class="form-success" id="form-success">
           <div class="success-icon">🎀</div>
           <h3>Message Sent!</h3>
@@ -1302,19 +948,18 @@
   </div>
 </section>
 
-<!-- ═══════════════════════ NEWSLETTER ═══════════════════════ -->
+<!-- ═══════════════════ NEWSLETTER ═══════════════════ -->
 <section id="newsletter">
   <div class="section-label">✦ Stay in the Loop</div>
   <div class="section-title">Get Early Access to New Drops</div>
   <p class="section-sub">New collections, behind-the-scenes peeks, and exclusive deals — straight to your inbox.</p>
-
   <div class="newsletter-form">
     <input type="email" id="newsletter-email" placeholder="your@email.com" />
     <button id="newsletter-btn">Subscribe 🌸</button>
   </div>
 </section>
 
-<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
@@ -1324,29 +969,27 @@
     <div class="footer-col">
       <h4>Shop</h4>
       <ul>
-        <li><a href="#">Plushies</a></li>
-        <li><a href="#">Bags & Accessories</a></li>
-        <li><a href="#">Flowers & Bouquets</a></li>
-        <li><a href="#">Keychains</a></li>
-        <li><a href="#">Custom Orders</a></li>
+        <li><a href="#collection">Plushies</a></li>
+        <li><a href="#collection">Bags &amp; Accessories</a></li>
+        <li><a href="#collection">Flowers &amp; Bouquets</a></li>
+        <li><a href="#collection">Custom Orders</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Info</h4>
       <ul>
-        <li><a href="#">How to Order</a></li>
-        <li><a href="#">Care Instructions</a></li>
-        <li><a href="#">Shipping & Delivery</a></li>
-        <li><a href="#">Returns</a></li>
+        <li><a href="#contact">How to Order</a></li>
+        <li><a href="#contact">Care Instructions</a></li>
+        <li><a href="#contact">Shipping &amp; Delivery</a></li>
+        <li><a href="#contact">Returns</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Connect</h4>
       <ul>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">TikTok</a></li>
-        <li><a href="https://wa.me/256784020572?text=Hi%20Anna!%20I%27d%20love%20to%20place%20an%20order%20🩷" target="_blank">WhatsApp</a></li>
-        <li><a href="/cdn-cgi/l/email-protection#50353d393c25313e3e316910373d31393c7e333f3d">Email Anna</a></li>
+        <li><a href="https://wa.me/256784020572" target="_blank">WhatsApp</a></li>
+        <li><a href="mailto:emiluanna9@gmail.com">Email Anna</a></li>
+        <li><a href="tel:+256784020572">Call: 0784 020 572</a></li>
       </ul>
     </div>
   </div>
@@ -1356,26 +999,25 @@
   </div>
 </footer>
 
-<!-- ═══════════════════════ SUPABASE SDK ═══════════════════════ -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
+<!-- ═══════════════════ SUPABASE ═══════════════════ -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  // ── Supabase client ──────────────────────────────────────────
+  // ── Supabase client
   const db = supabase.createClient(
     'https://amssezrnrcrvobukcqmp.supabase.co',
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFtc3NlenJucmNydm9idWtjcW1wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5NDU2NjcsImV4cCI6MjA5MDUyMTY2N30.W4423Nbey2oP6eIRsHTYGEeekNXNoDWFfzde-aLD-7U'
   );
 
-  // ── Scroll-triggered fade-up ─────────────────────────────────
+  // ── Scroll fade-up (product cards, contact columns)
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) e.target.classList.add('visible');
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // ── Add-to-bag micro-interaction ─────────────────────────────
+  // ── Add-to-bag micro-interaction
   document.querySelectorAll('.add-btn').forEach(btn => {
     btn.addEventListener('click', function () {
       const original = this.textContent;
@@ -1390,7 +1032,7 @@
     });
   });
 
-  // ── Inquiry form → saves to Supabase ────────────────────────
+  // ── Inquiry form → Supabase
   const sendBtn = document.getElementById('form-send-btn');
   if (sendBtn) {
     sendBtn.addEventListener('click', async () => {
@@ -1400,17 +1042,13 @@
       const item  = document.getElementById('f-item').value;
       const msg   = document.getElementById('f-msg').value.trim();
 
-      // Highlight empty required fields
       if (!name || !phone || !item) {
-        ['f-name', 'f-phone', 'f-item'].forEach(id => {
+        ['f-name','f-phone','f-item'].forEach(id => {
           const el = document.getElementById(id);
           if (!el.value.trim()) {
             el.style.borderColor = '#FF4D79';
             el.style.background  = '#FFF0F5';
-            setTimeout(() => {
-              el.style.borderColor = '';
-              el.style.background  = '';
-            }, 1800);
+            setTimeout(() => { el.style.borderColor = ''; el.style.background = ''; }, 1800);
           }
         });
         return;
@@ -1420,11 +1058,10 @@
       sendBtn.disabled = true;
 
       const { error } = await db.from('inquiries').insert({
-        name,
-        phone,
-        email:         email || null,
+        name, phone,
+        email: email || null,
         item_category: item,
-        message:       msg   || null
+        message: msg || null
       });
 
       if (error) {
@@ -1434,13 +1071,12 @@
         return;
       }
 
-      // Show success card
       document.getElementById('form-content').style.display = 'none';
       document.getElementById('form-success').style.display = 'flex';
     });
   }
 
-  // ── Newsletter → saves to Supabase ──────────────────────────
+  // ── Newsletter → Supabase
   const newsletterBtn = document.getElementById('newsletter-btn');
   if (newsletterBtn) {
     newsletterBtn.addEventListener('click', async () => {
@@ -1457,15 +1093,23 @@
       newsletterBtn.disabled = true;
 
       const { error } = await db.from('newsletter_subscribers').insert({ email });
-
       const formEl = document.querySelector('.newsletter-form');
 
       if (error && error.code === '23505') {
         formEl.innerHTML = '<p style="color:#fff;font-family:Nunito,sans-serif;font-weight:700;font-size:1rem;padding:16px;">💕 You\'re already subscribed!</p>';
         return;
       }
-
       if (error) {
         newsletterBtn.textContent = 'Subscribe 🌸';
         newsletterBtn.disabled = false;
-        alert('
+        alert('Something went wrong — try again! 💕');
+        return;
+      }
+
+      formEl.innerHTML = '<p style="color:#fff;font-family:Nunito,sans-serif;font-weight:700;font-size:1rem;padding:16px;">🌸 You\'re in! Welcome to the Emilus fam 🩷</p>';
+    });
+  }
+</script>
+
+</body>
+</html>
